@@ -23,6 +23,6 @@ We need to install [Node.js](https://nodejs.org/) in order to have access to its
 
 With Node.js installed and Node Package Manager available, run the following command:
 
-```shell
+```
 npm install verto
 ```
