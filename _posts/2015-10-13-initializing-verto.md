@@ -26,12 +26,14 @@ If this is your first time using Verto lib, you'll have to initialize it and get
   * @param {boolean} status - has media permission
   */
   function bootstrap(status) {
+    var wsURL = 'wss://' + window.location.hostname + ':8082';
+
     vertoCallbacks = {};
 
     vertoHandle = new jQuery.verto({
       login: '1008@127.0.0.1',
       passwd: '1234',
-      socketUrl: '',
+      socketUrl: wsURL,
       tag: '',
       ringFile: '',
     }, vertoCallbacks);
