@@ -3,38 +3,16 @@ layout: default
 title: "Index"
 ---
 
-### Get Started
+Verto is a WebRTC communication platform based on [FreeSWITCH](https://freeswitch.org/). We divide it in three other projects: mod_verto, verto and verto-communicator. 
 
-Before you can use Verto, you'll need to install it. Our complete installation guide covers all the possibilities;
+## mod_verto
 
-[Freeswitch/Verto Installation Guide](https://freeswitch.org/confluence/display/FREESWITCH/FreeSWITCH+1.6+Video)
+It's the FreeSWITCH module responsible for abstracting SIP protocol. It makes easier to connect through a web socket and make audio and video calls. Its development is bundled with FreeSWITCH core.
 
-[Verto Communicator (Angular Demo)](https://freeswitch.org/confluence/display/FREESWITCH/Verto+Communicator)
+## verto
 
-### How we'll learn
+The jQuery library which connects and deals with FreeSWITCH mod_verto through a web socket.
 
-Let's learn by example.
+## verto-communicator
 
-Throughout this tutorial, we’ll walk you through the creation of a basic video conference application.
-
-It’ll consist of these parts:
-
-* initialize verto
-* do a call
-* hangup call
-* recover call from refresh
-
-### Requirements
-
-* jQuery;
-* Browser with WebRTC support.
-
-### How it works?
-
-```javascript
-/*
-* @TODO:
-* Explain how lib verto send/receive instruction to/from mod verto.
-* Place a image diagram here.
-*/
-```
+[Verto Communicator](https://freeswitch.org/confluence/display/FREESWITCH/Verto+Communicator) is the web application responsible for expose mod_verto features to users. It's based on verto jQuery library and uses AngularJS.
