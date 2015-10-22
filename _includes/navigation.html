@@ -3,8 +3,13 @@
     {% for section in site.sections %}
         {% assign attr = section[0] %}
         {% assign label = section[1] %}
-
-        {% for page in site.categories[attr] %}
+	
+	{% if site.categories[attr] %}
+	    {% assign sorted_pages = (site.categories[attr] | sort:'order') %}
+	{% else %}
+	    {% assign sorted_pages = site.categories[attr] %}
+	{% endif %}
+        {% for page in sorted_pages %}
             {% if forloop.first %}
                 <li class="nav-header">{{ label }}</li>
             {% endif %}

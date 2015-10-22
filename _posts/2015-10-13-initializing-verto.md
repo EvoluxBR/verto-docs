@@ -3,7 +3,8 @@ layout: page
 title: "Initializing Verto"
 category: doc
 date: 2015-10-13 16:08:19
-disqus: 1 
+disqus: 1
+order: 3
 ---
 
 If this is your first time using Verto lib, you'll have to initialize it and get a lib instance.

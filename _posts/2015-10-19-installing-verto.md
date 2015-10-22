@@ -4,6 +4,7 @@ title: "Installing Verto"
 category: doc
 date: 2015-10-19 11:56:05
 disqus: 2015-10-19-installing-verto
+order: 2
 ---
 
 Before we can use Verto, we'll need to install it. There are two options available:
