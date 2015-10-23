@@ -7,86 +7,134 @@ disqus: 1
 order: 3
 ---
 
-If this is your first time using Verto lib, you'll have to initialize it and get a lib instance.
+It's time to edit our `main.js` JavaScript file. Start with the following structure:
+
+```javascript
+(function() {
+  var vertoHandle, vertoCallbacks;
+  // put your code here!
+})();
+```
+
+## Initializing
+
+Initializing Verto will prepare the browser for WebRTC requiring and testing media permissions and checking for available devices.
+
+```javascript
+$.verto.init({}, bootstrap);
+```
+
+## Bootstrapping
+
+Bootstrap function will connect to Verto server and log in with specified credentials and configurations.
+
+```javascript
+function bootstrap(status) {
+  vertoHandle = new jQuery.verto({
+    login: '1008@127.0.0.1',
+    passwd: '1234',
+    socketUrl: 'wss://127.0.0.1:8082',
+    tag: 'example',
+    ringFile: 'sounds/bell_ring2.wav',
+    deviceParams: {
+      useMic: true,
+      useSpeak: true
+    },
+    iceServers: true
+  }, vertoCallbacks);
+};
+```
+
+## Callbacks
+
+Almost everything that happens in Verto fires an event. So we need event handlers to receive and process these events.
+
+At first we'll handle the login event:
+
+```javascript
+function onWSLogin(verto, success) {
+  console.log('onWSLogin', success);
+};
+```
+
+When we add it to the Verto Callbacks dictionary it will print success variable value on browser's console when web socket login task is finished.
+
+```javascript
+vertoCallbacks = {
+  onWSLogin: onWSLogin,
+};
+```
+
+You can do the same to the `onWSClose` event. Do not forget to add it to the vertoCallbacks dictionary.
+
+## Full code
+
+In the end of this section you should have something like this in your JavaScript file:
 
 ```javascript
 (function() {
   var vertoHandle, vertoCallbacks;
   
-  /*
-  * Initialize lib, cooking.
-  * steps executed in init:
-  * - test media permission
-  * - check available devices
-  */
   $.verto.init({}, bootstrap);
   
-  /**
-  * Callback for verto init.
-  * @constructor
-  * @param {boolean} status - has media permission
-  */
   function bootstrap(status) {
-    var wsURL = 'wss://' + window.location.hostname + ':8082';
-
-    vertoCallbacks = {};
-
     vertoHandle = new jQuery.verto({
       login: '1008@127.0.0.1',
       passwd: '1234',
-      socketUrl: wsURL,
-      tag: '',
-      ringFile: '',
+      socketUrl: 'wss://127.0.0.1:8082',
+      tag: 'example',
+      ringFile: 'sounds/bell_ring2.wav',
+      deviceParams: {
+        useMic: true,
+        useSpeak: true
+      },
+      iceServers: true
     }, vertoCallbacks);
-    
-    
-    // do something in our app 
+  };
+  
+  vertoCallbacks = {
+    onWSLogin: onWSLogin,
+    onWSClose: onWSClose
+  };
+  
+  function onWSLogin(verto, success) {
+    console.log('onWSLogin', success);
+  };
+  
+  function onWSClose(verto, success) {
+    console.log('onWSClose', success);
   };
 })();
 ```
-[source code]()
 
-### $.verto.init(options, callback) 
+## Modifying HTML
 
-Init check browser condition and media (audio and video) permission for library use.
+How is this code supposed to work if we don't include Verto and its dependencies in our HTML file? Edit your `index.html` file so that it looks like this:
 
-### jQuery.verto(options, callback) [vertoHandle]
+```html
+<!-- Verto dependencies -->
+<script src="../lib/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="../lib/node_modules/jquery-json/dist/jquery.json.min.js"></script>
 
-vertoHandle is an **jQuery.verto** instance, it'll connect verto JS with FS mod_verto creating a session. **jQuery.verto** constructor receives options and a callback object. Options will be used to configure verto lib.
+<!-- Verto library -->
+<script src="../lib/node_modules/verto/src/jquery.verto.js"></script>
+<script src="../lib/node_modules/verto/src/jquery.FSRTC.js"></script>
+<script src="../lib/node_modules/verto/src/jquery.jsonrpcclient.js"></script>
 
-verto handle options:
-
-```javascript
-{
-  login: null,
-  passwd: null,
-  socketUrl: null,
-  tag: null,
-  localTag: null,
-  videoParams: {},
-  audioParams: {},
-  loginParams: {},
-  deviceParams: {
-    onResCheck: null,
-    useCamera: null,
-    useMic: null,
-    useSpeak: null
-  },
-  userVariables: {},
-  iceServers: false,
-  ringSleep: 6000,
-  sessid: null
-}
+<!-- Our project's files -->
+<script src="main.js"></script>
 ```
 
-* **login**
+## Trying
 
-    sip login for this verto session.
+We cannot open `index.html` file directly in our browser, since `file:///` protocol won't work properly.
 
-* **passwd**
-    
-    sip password for this verto session.
+We should access it through a web server. You can user any of them: Apache, nginx... But to keep things simple we'll be using Python bundled Simple HTTP Server inside our project's root directory:
 
-* **socketUrl**
-    
-    freeswitch websocket url (FS Server)
+```
+python -m SimpleHTTPServer
+```
+
+Now you should be able to access [http://127.0.0.1:8000/src/index.html](http://127.0.0.1:8000/src/index.html) and test Verto connection with the browser's console open.
+
+If everything went fine you should see a console log with `onWSLogin true` and can now [Make a Call](/doc/making-a-call.html).
