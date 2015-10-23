@@ -55,7 +55,6 @@ function makeCall() {
     useMic: true,
     useSpeak: true,
     dedEnc: false,
-    mirrorInput: true,
     userVariables: {
       avatar: "",
       email: "test@test.com"

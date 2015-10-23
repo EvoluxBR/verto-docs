@@ -23,7 +23,7 @@ Let's keep things simple and (again) just add a button:
 
 ## Binding click
 
-Inside our bootstrap function add event bindings with a function callback so that we know when user clicked our Make Call button:
+Inside our bootstrap function add event bindings with a function callback so that we know when user clicked our Hang Up Call button:
 
 ```javascript
 function bootstrap(status) {
@@ -81,7 +81,6 @@ In the end we should see something like this in out `main.js` file:
       useMic: true,
       useSpeak: true,
       dedEnc: false,
-      mirrorInput: true,
       userVariables: {
         avatar: "",
         email: "test@test.com"
