@@ -3,7 +3,7 @@ layout: page
 title: "Initializing Verto"
 category: doc
 date: 2015-10-13 16:08:19
-disqus: 1
+disqus: 2015-10-13-initializing-verto
 order: 3
 ---
 
