@@ -10,6 +10,7 @@ order: 3
 It's time to edit our `main.js` JavaScript file. Start with the following structure:
 
 ```javascript
+// our main function
 (function() {
   var vertoHandle, vertoCallbacks;
   // put your code here!
@@ -34,7 +35,6 @@ function bootstrap(status) {
     login: '1008@127.0.0.1',
     passwd: '1234',
     socketUrl: 'wss://127.0.0.1:8082',
-    tag: 'example',
     ringFile: 'sounds/bell_ring2.wav',
     deviceParams: {
       useMic: true,
@@ -82,7 +82,6 @@ In the end of this section you should have something like this in your JavaScrip
       login: '1008@127.0.0.1',
       passwd: '1234',
       socketUrl: 'wss://127.0.0.1:8082',
-      tag: 'example',
       ringFile: 'sounds/bell_ring2.wav',
       deviceParams: {
         useMic: true,
