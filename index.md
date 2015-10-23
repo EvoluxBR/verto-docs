@@ -26,13 +26,13 @@ The jQuery library which connects and deals with FreeSWITCH mod_verto through a 
 
 In this tutorial, we're going to learn by examples how to install, import and use verto jQuery library to create a basic video conference web application.
 
-- [getting started](/doc/getting-started.html)
-- [installing verto](/doc/installing-verto.html)
-- [importing and initializing verto](/doc/initializing-verto.html)
-- [making an audio call](/doc/making-a-call.html)
-- [hanging up a call](/doc/hanging-up-a-call.html)
-- [answerign a call](/doc/answering-a-call.html)
-- [adding video support](/doc/adding-video-support.html)
-- [recovering a call](/doc/recovering-a-call.html)
+- [getting started](/tut/getting-started.html)
+- [installing verto](/tut/installing-verto.html)
+- [importing and initializing verto](/tut/initializing-verto.html)
+- [making an audio call](/tut/making-a-call.html)
+- [hanging up a call](/tut/hanging-up-a-call.html)
+- [answerign a call](/tut/answering-a-call.html)
+- [adding video support](/tut/adding-video-support.html)
+- [recovering a call](/tut/recovering-a-call.html)
 
-[Click here and get started](/doc/getting-started.html).
+[Click here and get started](/tut/getting-started.html).

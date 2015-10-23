@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Adding Video Support"
-category: doc
+category: tut
 date: 2015-10-19 13:23:35
 disqus: 2015-10-19-adding-video-support
 order: 7
@@ -79,4 +79,4 @@ Add something like this to your `style.css` file. Feel free to change and improv
 
 Now you have full video support in Verto :)
 
-And if somethings fails, your internet connection goes down for a while or you browser crashes? [Recovering a Call](/doc/recovering-a-call.html) looks like something more complex to do, doesn't?
+And if somethings fails, your internet connection goes down for a while or you browser crashes? [Recovering a Call](/tut/recovering-a-call.html) looks like something more complex to do, doesn't?

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Getting Started"
-category: doc
+category: tut
 date: 2015-10-19 11:49:25
 disqus: 2015-10-19-getting-started
 order: 1
@@ -44,4 +44,4 @@ Let's start adding our basic HTML structure. `index.html` should contain somethi
 
 jQuery and jQuery JSON are libraries required by Verto jQuery plugin.
 
-[Now, let's install Verto!](/doc/installing-verto.html)
+[Now, let's install Verto!](/tut/installing-verto.html)

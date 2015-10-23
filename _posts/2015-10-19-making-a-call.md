@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Making a Call"
-category: doc
+category: tut
 date: 2015-10-19 13:23:05
 disqus: 2015-10-19-making-a-call
 order: 4
@@ -63,4 +63,4 @@ function makeCall() {
 };
 ```
 
-Now you should be able to make an audio call with Verto. But if you're able to make a new call you should be able do [Hang up a Call](/doc/hanging-up-a-call.html).
+Now you should be able to make an audio call with Verto. But if you're able to make a new call you should be able do [Hang up a Call](/tut/hanging-up-a-call.html).

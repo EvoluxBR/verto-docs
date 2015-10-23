@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Initializing Verto"
-category: doc
+category: tut
 date: 2015-10-13 16:08:19
 disqus: 2015-10-13-initializing-verto
 order: 3
@@ -136,4 +136,4 @@ python -m SimpleHTTPServer
 
 Now you should be able to access [http://127.0.0.1:8000/src/index.html](http://127.0.0.1:8000/src/index.html) and test Verto connection with the browser's console open.
 
-If everything went fine you should see a console log with `onWSLogin true` and can now [Make a Call](/doc/making-a-call.html).
+If everything went fine you should see a console log with `onWSLogin true` and can now [Make a Call](/tut/making-a-call.html).

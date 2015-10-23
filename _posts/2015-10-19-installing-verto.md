@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Installing Verto"
-category: doc
+category: tut
 date: 2015-10-19 11:56:05
 disqus: 2015-10-19-installing-verto
 order: 2
@@ -41,4 +41,4 @@ npm install jquery
 npm install jquery-json
 ```
 
-[Next step is import and initialize Verto in our project](/doc/initializing-verto.html).
+[Next step is import and initialize Verto in our project](/tut/initializing-verto.html).

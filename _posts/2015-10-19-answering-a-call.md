@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Answering a Call"
-category: doc
+category: tut
 date: 2015-10-19 13:23:21
 disqus: 2015-10-19-answering-a-call
 order: 6
@@ -145,4 +145,4 @@ In the end we should see something like this in out `main.js` file:
 })();
 ```
 
-Now you can answer calls in our Verto demo app. What about [Add Video Support](/doc/adding-video-support.html)?
+Now you can answer calls in our Verto demo app. What about [Add Video Support](/tut/adding-video-support.html)?

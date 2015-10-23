@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Hanging Up a Call"
-category: doc
+category: tut
 date: 2015-10-19 13:23:12
 disqus: 2015-10-19-hanging-up-a-call
 order: 5
@@ -107,4 +107,4 @@ In the end we should see something like this in out `main.js` file:
 })();
 ```
 
-Now that you're able to make and hang up a call wit Verto, what about [Adding Video Support](/doc/adding-video-support.html)?.
+Now that you're able to make and hang up a call wit Verto, what about [Adding Video Support](/tut/adding-video-support.html)?.
