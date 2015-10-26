@@ -14,9 +14,6 @@ google_analytics_id: ''
 #   2 - show only if posts are present
 navigation: 2
 
-# Site base URL, used in links and imports
-baseurl: ''
-
 # URL to source code, used in _includes/footer.html
 codeurl: ''
 
