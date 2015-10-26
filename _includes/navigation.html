@@ -4,18 +4,28 @@
         {% assign attr = section[0] %}
         {% assign label = section[1] %}
 	
-	{% if site.categories[attr] %}
-	    {% assign sorted_pages = (site.categories[attr] | sort:'order') %}
-	{% else %}
-	    {% assign sorted_pages = site.categories[attr] %}
-	{% endif %}
-        {% for page in sorted_pages %}
+  	{% if site.categories[attr] %}
+  	    {% assign sorted_pages = (site.categories[attr] | sort:'order') %}
+  	{% else %}
+  	    {% assign sorted_pages = site.categories[attr] %}
+  	{% endif %}
+        {% for sorted_page in sorted_pages %}
             {% if forloop.first %}
                 <li class="nav-header">{{ label }}</li>
             {% endif %}
-            <li data-order="{{ page.order }}"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
+            <li data-order="{{ sorted_page.order }}">
+                {% if sorted_page.url == page.url %}
+                <a href="{{ site.baseurl }}{{ sorted_page.url }}" class="active">
+                    {{ sorted_page.title }}
+                </a>
+                {% else %}
+                <a href="{{ site.baseurl }}{{ sorted_page.url }}">
+                    {{ sorted_page.title }}
+                </a>
+                {% endif %}
+            </li>
         {% endfor %}
     {% endfor %}
-<!-- List additional links. It is recommended to add a divider
-    e.g. <li class="divider"></li> first to break up the content. -->
+    <!-- List additional links. It is recommended to add a divider
+         e.g. <li class="divider"></li> first to break up the content. -->
 </ul>
