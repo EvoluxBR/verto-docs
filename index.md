@@ -5,22 +5,25 @@ title: "Index"
 
 ## What's Verto
 
-Verto is a WebRTC communication platform based on [FreeSWITCH](https://freeswitch.org/). We divide it in three other projects: mod_verto, verto and verto-communicator. 
+Verto is a [FreeSWITCH](https://freeswitch.org/) endpoint that implements a subset of a JSON-RPC connection designed for use over secure web sockets. The initial target is WebRTC to simplify coding and implementing calls from web browsers and devices to FreeSWITCH. This allows a web browser or other WebRTC client to originate a call using Verto into a FreeSWITCH installation and then out to the PSTN using SIP, SS7, or other supported protocol. This moves FreeSWITCH farther out onto the cutting edge of real-time communications technology while maintaining interoperability with SIP and other legacy protocols.
 
-
-## Verto projects
+In short words, Verto simplifies communications between modern devices.
 
 ### mod_verto
 
-It's the FreeSWITCH module responsible for abstracting SIP protocol. It makes easier to connect through a web socket and make audio and video calls. Its development is bundled with FreeSWITCH core.
+mod_verto is the signaling protocol. It's the FreeSWITCH module responsible for abstracting SIP protocol and it depends on mod_rtc for secure media streaming services. Read more about it on [FreeSWITCH Confluence](https://freeswitch.org/confluence/display/FREESWITCH/mod_verto).
 
-### verto
+### verto library
 
 The jQuery library which connects and deals with FreeSWITCH mod_verto through a web socket.
 
-### verto-communicator
+## Implemented applications
 
-[Verto Communicator](https://freeswitch.org/confluence/display/FREESWITCH/Verto+Communicator) is the web application responsible for expose mod_verto features to users. It's based on verto jQuery library and uses AngularJS.
+These are some examples of web clients that can be implemented on top of mod_verto.
+
+- [Original Verto Demo](https://cantina.freeswitch.org/verto/).
+
+- [Verto Communicator](https://cantina.freeswitch.org/vc/) - Read more on [FreeSIWTCH Confluence](https://freeswitch.org/confluence/display/FREESWITCH/Verto+Communicator).
 
 ## What will be covered
 
