@@ -23,6 +23,14 @@ code {
     margin-bottom: 20px;
 }
 
+#header.container {
+  background-color: #fff;
+}
+
+.header-container {
+  z-index: 1;
+}
+
 #header a:hover {
     text-decoration: none;
 }
@@ -42,6 +50,10 @@ code {
     margin-top: 0;
 }
 
+#content, #navigation {
+  z-index: 0;
+  margin-top: 60px;
+}
 
 #navigation {
     font-size: 0.9em;
@@ -83,7 +95,7 @@ body.rtl ul, body.rtl ol {
     top: 0;
     right: 0;
     border: 0;
-    z-index: 1;
+    z-index: 2;
 }
 
 li > a.active {
