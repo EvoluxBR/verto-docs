@@ -44,4 +44,4 @@ Let's start adding our basic HTML structure. `index.html` should contain somethi
 
 jQuery and jQuery JSON are libraries required by Verto jQuery plugin.
 
-[Now, let's install Verto!](/tut/installing-verto.html)
+[Now, let's install Verto!]({{ site.baseurl }}/tut/installing-verto.html)

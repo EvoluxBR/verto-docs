@@ -79,4 +79,4 @@ Add something like this to your `style.css` file. Feel free to change and improv
 
 Now you have full video support in Verto :)
 
-And if somethings fails, your internet connection goes down for a while or you browser crashes? [Recovering a Call](/tut/recovering-a-call.html) looks like something more complex to do, doesn't?
+And if somethings fails, your internet connection goes down for a while or you browser crashes? [Recovering a Call]({{ site.baseurl }}/tut/recovering-a-call.html) looks like something more complex to do, doesn't?

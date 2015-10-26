@@ -136,4 +136,4 @@ python -m SimpleHTTPServer
 
 Now you should be able to access [http://127.0.0.1:8000/src/index.html](http://127.0.0.1:8000/src/index.html) and test Verto connection with the browser's console open.
 
-If everything went fine you should see a console log with `onWSLogin true` and can now [Make a Call](/tut/making-a-call.html).
+If everything went fine you should see a console log with `onWSLogin true` and can now [Make a Call]({{ site.baseurl }}/tut/making-a-call.html).

@@ -107,4 +107,4 @@ In the end we should see something like this in out `main.js` file:
 })();
 ```
 
-Now that you're able to make and hang up a call wit Verto, what about [Adding Video Support](/tut/adding-video-support.html)?.
+Now that you're able to make and hang up a call wit Verto, what about [Adding Video Support]({{ site.baseurl }}/tut/adding-video-support.html)?.

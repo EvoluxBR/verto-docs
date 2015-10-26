@@ -41,4 +41,4 @@ npm install jquery
 npm install jquery-json
 ```
 
-[Next step is import and initialize Verto in our project](/tut/initializing-verto.html).
+[Next step is import and initialize Verto in our project]({{ site.baseurl }}/tut/initializing-verto.html).

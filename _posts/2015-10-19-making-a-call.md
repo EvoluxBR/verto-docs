@@ -63,4 +63,4 @@ function makeCall() {
 };
 ```
 
-Now you should be able to make an audio call with Verto. But if you're able to make a new call you should be able do [Hang up a Call](/tut/hanging-up-a-call.html).
+Now you should be able to make an audio call with Verto. But if you're able to make a new call you should be able do [Hang up a Call]({{ site.baseurl }}/tut/hanging-up-a-call.html).
