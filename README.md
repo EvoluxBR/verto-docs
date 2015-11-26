@@ -1,6 +1,6 @@
 # Verto documentation
 
-Verto documentation uses markdown and is built with Jekyll, a simple, blog-aware, static site generator perfect for personal, project, or organization sites. 
+Verto documentation uses markdown and is built with Jekyll, a simple, blog-aware, static site generator perfect for personal, project, or organization sites. View it live [clicking here](http://evoluxbr.github.io/verto-docs/).
 
 ## Installing Jekyll
 
