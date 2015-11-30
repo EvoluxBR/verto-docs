@@ -34,7 +34,7 @@ In this tutorial, we're going to learn by examples how to install, import and us
 - [importing and initializing verto]({{ site.baseurl }}/tut/initializing-verto.html)
 - [making an audio call]({{ site.baseurl }}/tut/making-a-call.html)
 - [hanging up a call]({{ site.baseurl }}/tut/hanging-up-a-call.html)
-- [answerign a call]({{ site.baseurl }}/tut/answering-a-call.html)
+- [answering a call]({{ site.baseurl }}/tut/answering-a-call.html)
 - [adding video support]({{ site.baseurl }}/tut/adding-video-support.html)
 - [recovering a call]({{ site.baseurl }}/tut/recovering-a-call.html)
 
