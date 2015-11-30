@@ -10,7 +10,7 @@ order: 8
 What happens if:
 
 - your internet connection goes down for a while
-- your browser chases or you close the tab by mistake
+- your browser closes or you close the tab by mistake
 - your computer restarts, shuts down, have a power failure
 
 Verto **automatically** restore current calls with no user interference. 
