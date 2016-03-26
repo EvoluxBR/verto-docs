@@ -1,16 +1,14 @@
 # Verto documentation
 
-Verto documentation uses markdown and is built with Jekyll, a simple, blog-aware, static site generator perfect for personal, project, or organization sites. View it live [clicking here](http://evoluxbr.github.io/verto-docs/).
+Verto documentation uses markdown and is built with [Jekyll](https://jekyllrb.com/), a simple, blog-aware, static site generator perfect for personal, project, or organization sites. View it live [clicking here](http://evoluxbr.github.io/verto-docs/).
 
-## Installing Jekyll
-
-Jekyll is a Ruby Gem. To install it, simply run the following command:
+## Installing dependencies
 
 ```shell
-gem install jekyll --no-doc
+bundle install
 ```
 
-`--no-doc` optional parameter will ignore documentation files. You still can access Jekyll documentation online: [Jekyll Documentation](https://jekyllrb.com/docs/home/).
+> Note: you may need to use [RVM](https://rvm.io/) to install `ruby` and then execute `gem install bundle` before executing the command above, specially on Mac OS X.
 
 ## Running Verto docs server
 
