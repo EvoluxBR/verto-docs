@@ -23,7 +23,7 @@ These are some examples of web clients that can be implemented on top of mod_ver
 
 - [Original Verto Demo](https://cantina.freeswitch.org/verto/).
 
-- [Verto Communicator](https://cantina.freeswitch.org/vc/) - Read more on [FreeSIWTCH Confluence](https://freeswitch.org/confluence/display/FREESWITCH/Verto+Communicator).
+- [Verto Communicator](https://cantina.freeswitch.org/vc/) - Read more on [FreeSWITCH Confluence](https://freeswitch.org/confluence/display/FREESWITCH/Verto+Communicator).
 
 ## What will be covered
 
