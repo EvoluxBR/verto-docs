@@ -10,5 +10,6 @@ This documentation was written by:
 
 - Stefan Yohansson Areeira Pinto <stefan@evolux.net.br>
 - Victor Paiva Torres <victor@evolux.net.br>
+- Chad Phillips <chad@apartmentlines.com>
 
 See us on [GitHub](https://github.com/EvoluxBR/verto-docs).
