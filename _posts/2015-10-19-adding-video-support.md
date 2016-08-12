@@ -26,17 +26,15 @@ Verto was built for video conferences, so adding support for it is very simple.
 ```javascript
 function bootstrap(status) {
   vertoHandle = new jQuery.verto({
-    login: '1008@127.0.0.1',
-    passwd: '1234',
-    socketUrl: 'wss://127.0.0.1:8082',
-    ringFile: 'sounds/bell_ring2.wav',
-    tag: 'video-container', // specifying video tag in our html
+    // ID of HTML video tag where the video feed is placed.
+    tag: "video-container",
     deviceParams: {
-      useCamera: true, // asking for camera permissions and devices
-      useMic: true,
-      useSpeak: true
+      // Asking for camera permissions and devices.
+      useCamera: 'any',
+      useMic: 'any',
+      useSpeak: 'any',
     },
-    iceServers: true
+    // Other params...
   }, vertoCallbacks);
 };
 ```
@@ -45,22 +43,30 @@ function bootstrap(status) {
 
 ```javascript
 function makeCall() {
+
+  // Sets the parameters for the video stream that will be sent to the
+  // videoconference.
+  // Hint: Use the upKPS result from a bandwidth test to determine the video
+  // resolution to send!
+  vertoHandle.videoParams({
+    // Dimensions of the video feed to send.
+    minWidth: 320,
+    minHeight: 240,
+    maxWidth: 640,
+    maxHeight: 480,
+    // The minimum frame rate of the client camera, Verto will fail if it's
+    // less than this.
+    minFrameRate: 15,
+    // The maximum frame rate to send from the camera.
+    vertoBestFrameRate: 30,
+  });
+
   currentCall = vertoHandle.newCall({
-    destination_number: "3520",
-    caller_id_name: "Test Guy",
-    caller_id_number: "1008",
-    outgoingBandwidth: "default",
-    incomingBandwidth: "default",
-    useVideo: true, // telling verto to make a call with video support
-    mirrorInput: true, // telling verto to mirror user's webcam
-    useStereo: true,
-    useMic: true,
-    useSpeak: true,
-    dedEnc: false,
-    userVariables: {
-      avatar: "",
-      email: "test@test.com"
-    }
+    // Enable video support.
+    useVideo: true,
+    // Mirror local user's webcam.
+    mirrorInput: true,
+    // Other params...
   });
 };
 ```
@@ -79,4 +85,4 @@ Add something like this to your `style.css` file. Feel free to change and improv
 
 Now you have full video support in Verto :)
 
-And if somethings fails, your internet connection goes down for a while or you browser crashes? [Recovering a Call]({{ site.baseurl }}/tut/recovering-a-call.html) looks like something more complex to do, doesn't?
+And if something fails, your internet connection goes down for a while or you browser crashes? [Recovering a call]({{ site.baseurl }}/tut/recovering-a-call.html) looks like something more complex to do, doesn't?

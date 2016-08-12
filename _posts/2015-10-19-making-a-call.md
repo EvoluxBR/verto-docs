@@ -45,22 +45,64 @@ We have to create the callback we've specified to the event binding inside our m
 
 ```javascript
 function makeCall() {
+
   currentCall = vertoHandle.newCall({
-    destination_number: "3520",
-    caller_id_name: "Test Guy",
-    caller_id_number: "1008",
-    outgoingBandwidth: "default",
-    incomingBandwidth: "default",
+    // Extension to dial.
+    destination_number: '3520',
+    caller_id_name: 'Test Guy',
+    caller_id_number: '1008',
+    outgoingBandwidth: 'default',
+    incomingBandwidth: 'default',
+    // Enable stereo audio.
     useStereo: true,
-    useMic: true,
-    useSpeak: true,
-    dedEnc: false,
+    // You can pass any application/call specific variables here, and they will
+    // be available as a dialplan variable, prefixed with 'verto_dvar_'.
     userVariables: {
-      avatar: "",
-      email: "test@test.com"
-    }
+      // Shows up as a 'verto_dvar_email' dialplan variable.
+      email: 'test@test.com'
+    },
+    // Use a dedicated outbound encoder for this user's video.
+    // NOTE: This is generally only needed if the user has some kind of
+    // non-standard video setup, and is not recommended to use, as it
+    // dramatically increases the CPU usage for the conference.
+    dedEnc: false,
+    // Example of setting the devices per-call.
+    //useMic: 'any',
+    //useSpeak: 'any',
   });
 };
 ```
 
-Now you should be able to make an audio call with Verto. But if you're able to make a new call you should be able do [Hang up a Call]({{ site.baseurl }}/tut/hanging-up-a-call.html).
+## Tracking call progress
+
+The ```onDialogState``` callback can be used to track the progress of the call
+if desired. It's fired each time the call changes state.
+
+```javascript
+// Receives call state messages from FreeSWITCH.
+function onDialogState(d) {
+  switch (d.state.name) {
+    case "trying":
+      break;
+    case "answering":
+      break;
+    case "active":
+      break;
+    case "hangup":
+      log("Call ended with cause: " + d.cause);
+      break;
+    case "destroy":
+      // Some kind of client side cleanup...
+      break;
+  }
+}
+
+vertoCallbacks = {
+  onDialogState: onDialogState,
+  // Other callbacks...
+};
+```
+
+Now you should be able to make an audio call with Verto. But if you're able to make a new call you should be able to [hang up a call]({{ site.baseurl }}/tut/hanging-up-a-call.html).
+
+You also may be interested in [receiving real-time updates from the conference]({{ site.baseurl }}/tut/subscribing-to-the-live-array.html).

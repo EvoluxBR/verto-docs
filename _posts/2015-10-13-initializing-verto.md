@@ -27,20 +27,52 @@ $.verto.init({}, bootstrap);
 
 ## Bootstrapping
 
-Bootstrap function will connect to Verto server and log in with specified credentials and configurations.
+The bootstrap function will connect to the Verto server and log in with specified credentials and configurations.
+
+Replace the values in brackets with the information for your FreeSWITCH and STUN servers.
 
 ```javascript
 function bootstrap(status) {
+  // Create a new verto instance:
+  // This step performs a user login to FreeSWITCH via secure websocket.
+  // The user must be properly configured in the FreeSWITCH user directory.
   vertoHandle = new jQuery.verto({
-    login: '1008@127.0.0.1',
-    passwd: '1234',
-    socketUrl: 'wss://127.0.0.1:8082',
+    login: '[USER]@[YOUR_FREESWITCH_SERVER_DOMAIN]',
+    passwd: '[PASSWORD]',
+    // As configured in verto.conf.xml on the server.
+    socketUrl: 'wss://[YOUR_FREESWITCH_SERVER_DOMAIN]:8082',
+    // TODO: Where is this file, on the server? What is the base path?
     ringFile: 'sounds/bell_ring2.wav',
+    // STUN/TURN server config, more than one is allowed.
+    // Instead of an array of objects, you can also pass a Boolean value,
+    // false disables STUN, true uses the default Google STUN servers.
+    iceServers: [
+      {
+        url: 'stun:[YOUR_STUN_SERVER]',
+      },
+    ],
+    // These can be set per-call as well as per-login.
     deviceParams: {
-      useMic: true,
-      useSpeak: true
+      useMic: 'any',
+      useSpeak: 'any',
     },
-    iceServers: true
+    // Below are some more advanced configuration parameters.
+    // Google Chrome specific adjustments/filters for audio.
+    // Official documentation is scant, best to try them out and see!
+    //audioParams: {
+    //  googEchoCancellation: true,
+    //  googAutoGainControl: true,
+    //  googNoiseSuppression: true,
+    //  googHighpassFilter: true,
+    //  googTypingNoiseDetection: true,
+    //  googEchoCancellation2: false,
+    //  googAutoGainControl2: false,
+    //},
+    // Internal session ID used by Verto to track the call, eg. for call
+    // recovery. A random one will be generated if none is provided, and,
+    // it can be useful to provide a custom ID to store and reference for
+    // other purposes.
+    //sessid: sessid,
   }, vertoCallbacks);
 };
 ```
@@ -54,10 +86,15 @@ At first we'll handle the login event:
 ```javascript
 function onWSLogin(verto, success) {
   console.log('onWSLogin', success);
+  if (success) {
+    // At this point you're connected to the FreeSWITCH server and logged
+    // in, ready to place a call to the conference, or run a test for the
+    // user's bandwidth.
+  }
 };
 ```
 
-When we add it to the Verto Callbacks dictionary it will print success variable value on browser's console when web socket login task is finished.
+When we add it to the Verto Callbacks dictionary it will print the ```success``` variable value on browser's console when web socket login task is finished.
 
 ```javascript
 vertoCallbacks = {
@@ -79,15 +116,7 @@ In the end of this section you should have something like this in your JavaScrip
   
   function bootstrap(status) {
     vertoHandle = new jQuery.verto({
-      login: '1008@127.0.0.1',
-      passwd: '1234',
-      socketUrl: 'wss://127.0.0.1:8082',
-      ringFile: 'sounds/bell_ring2.wav',
-      deviceParams: {
-        useMic: true,
-        useSpeak: true
-      },
-      iceServers: true
+      // The params...
     }, vertoCallbacks);
   };
   
@@ -136,4 +165,4 @@ python -m SimpleHTTPServer
 
 Now you should be able to access [http://127.0.0.1:8000/src/index.html](http://127.0.0.1:8000/src/index.html) and test Verto connection with the browser's console open.
 
-If everything went fine you should see a console log with `onWSLogin true` and can now [Make a Call]({{ site.baseurl }}/tut/making-a-call.html).
+If everything went fine you should see a console log with `onWSLogin true` and can now [make a call]({{ site.baseurl }}/tut/making-a-call.html), or [test your bandwidth]({{ site.baseurl }}/tut/testing-bandwidth.html).

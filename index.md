@@ -37,5 +37,10 @@ In this tutorial, we're going to learn by examples how to install, import and us
 - [answering a call]({{ site.baseurl }}/tut/answering-a-call.html)
 - [adding video support]({{ site.baseurl }}/tut/adding-video-support.html)
 - [recovering a call]({{ site.baseurl }}/tut/recovering-a-call.html)
+- [subscribing to the live array]({{ site.baseurl }}/tut/subscribing-to-the-live-array.html)
+- [sending conference commands]({{ site.baseurl }}/tut/sending-conference-commands.html)
+- [sending dtmf]({{ site.baseurl }}/tut/sending-dtmf.html)
+- [sending chat messages]({{ site.baseurl }}/tut/sending-chat-messages.html)
+- [testing bandwidth]({{ site.baseurl }}/tut/testing-bandwidth.html)
 
 [Click here and get started]({{ site.baseurl }}/tut/getting-started.html).

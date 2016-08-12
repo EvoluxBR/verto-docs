@@ -145,4 +145,4 @@ In the end we should see something like this in out `main.js` file:
 })();
 ```
 
-Now you can answer calls in our Verto demo app. What about [Add Video Support]({{ site.baseurl }}/tut/adding-video-support.html)?
+Now you can answer calls in our Verto demo app. What about [adding video support]({{ site.baseurl }}/tut/adding-video-support.html)?
