@@ -12,7 +12,7 @@ Before we can use Verto, we'll need to install it. There are two options availab
 - Install FreeSWITCH + Verto
 - Install Verto only
 
-If you're going to use a self hosted FreeSWITCH server you can just use the [FreeSWITCH/Verto Installation Guide](https://freeswitch.org/confluence/display/FREESWITCH/FreeSWITCH+1.6+Video) as it already comes with Verto.
+If you're going to use a self hosted FreeSWITCH server you can use the [FreeSWITCH Installation Guide](https://freeswitch.org/confluence/display/FREESWITCH/Installation) and [mod_verto Guide](https://freeswitch.org/confluence/display/FREESWITCH/mod_verto).
 
 If you have an external FreeSWITCH server with mod_verto enabled or just wish to use Verto stand-alone, follow the next steps.
 
