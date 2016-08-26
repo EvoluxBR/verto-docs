@@ -31,11 +31,11 @@
             <div class="row">
                 {% assign post_count = site.posts|size %}
                 {% if site.navigation != 0 and site.navigation == 1 or post_count > 0 %}
-                    <div id="navigation" class="col-sm-2">
+                    <div id="navigation" class="col-sm-3">
                         {% include navigation.html %}
                     </div>
 
-                    <div id="content" class="col-sm-10">
+                    <div id="content" class="col-sm-9">
                         {{ content }}
                     </div>
                 {% else %}
