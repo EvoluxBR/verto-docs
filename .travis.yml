@@ -1,0 +1,19 @@
+language: ruby
+rvm:
+  - 2.1
+branches:
+  only:
+    - master
+install:
+  - bundle install
+script: jekyll build
+after_success: |
+  if [ -n "$GITHUB_API_KEY" ]; then
+    cd "$TRAVIS_BUILD_DIR"
+    cd _site
+    git init
+    git checkout -b gh-pages
+    git add .
+    git -c user.name='travis' -c user.email='travis' commit -m 'gh-pages travis build'
+    git push -f -q https://victor-torres:$GITHUB_API_KEY@github.com/evoluxbr/verto-docs gh-pages &2>/dev/null
+  fi
