@@ -34,9 +34,3 @@ Inside verto docs directory run:
 ```shell
 ruby bin/jekyll-page "Some Doc Page Title" doc
 ```
-
-## Releasing new versions
-
-- run the command `jekyll build` inside repository on master branch
-- copy all content generated inside the `_site` directory to the root of the gh-pages branch
-- commit changes in gh-pages branch
