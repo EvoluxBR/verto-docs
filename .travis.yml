@@ -15,5 +15,5 @@ after_success: |
     git checkout -b gh-pages
     git add .
     git -c user.name='travis' -c user.email='travis' commit -m 'gh-pages travis build'
-    git push -f -q https://victor-torres:$GITHUB_API_KEY@github.com/evoluxbr/verto-docs gh-pages &2>/dev/null
+    git push -f https://victor-torres:$GITHUB_API_KEY@github.com/evoluxbr/verto-docs gh-pages
   fi
