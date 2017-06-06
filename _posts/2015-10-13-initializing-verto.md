@@ -56,6 +56,13 @@ function bootstrap(status) {
       useMic: 'any',
       useSpeak: 'any',
     },
+    // Optional Id of the HTML audio/video tag to be used for playing video/audio.
+    // This can even be a function which will return an element id. (Use this as
+    // function to create unique element for every new call specially when dealing
+    // with multiple calls simultaneously to avoid conflicts between streams.
+    // In this case, once call is finished, newly generated element will be
+    // destroyed automatically)
+    tag: "video-container",
     // Below are some more advanced configuration parameters.
     // Google Chrome specific adjustments/filters for audio.
     // Official documentation is scant, best to try them out and see!
