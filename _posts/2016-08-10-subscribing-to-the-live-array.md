@@ -54,6 +54,18 @@ function onMessage(verto, dialog, message, data) {
         }
       }
       break;
+    // TODO: Needs doc.
+    case $.verto.enum.message.info:
+      break;
+    // TODO: Needs doc.
+    case $.verto.enum.message.display:
+      break;
+    case $.verto.enum.message.clientReady:
+      // 1.8.x+
+      // Fired when the server has finished re-attaching any active sessions.
+      // data.reattached_sessions contains an array of session IDs for all
+      // sessions that were re-attached.
+      break;
   }
 }
 
