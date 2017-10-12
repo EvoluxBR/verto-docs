@@ -21,7 +21,7 @@ var bandwidthTestData;
 var testBandwidth = function() {
   // Translates to 256KB.
   var bytesToSendAndReceive = 1024 * 256;
-  vertoObj.rpcClient.speedTest(bytesToSendAndReceive, function(event, data) {
+  vertoHandle.rpcClient.speedTest(bytesToSendAndReceive, function(event, data) {
     // These values are in kilobits/sec.
     var upBand = Math.ceil(data.upKPS);
     var downBand = Math.ceil(data.downKPS);
