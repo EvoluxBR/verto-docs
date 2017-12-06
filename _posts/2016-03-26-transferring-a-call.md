@@ -18,7 +18,7 @@ Adding button...
 <div class="container">
   <h1>Verto - Demo Application</h1>
   <!-- ... -->
-  <button id="unhold-call">Transfer call</button>
+  <button id="transfer-call">Transfer call</button>
 </div> <!-- /container -->
 ```
 
