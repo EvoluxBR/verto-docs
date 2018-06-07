@@ -51,10 +51,16 @@ function bootstrap(status) {
         url: 'stun:[YOUR_STUN_SERVER]',
       },
     ],
-    // These can be set per-call as well as per-login.
+    // These can be set per-call as well as per-login. They can also be set to
+    // A specific device ID, or 'none' to disable that particular element of
+    // the media flow.
     deviceParams: {
+      // Set to 'none' to disable outbound audio.
       useMic: 'any',
+      // Set to 'none' to disable inbound audio.
       useSpeak: 'any',
+      // Set to 'none' to disable outbound video.
+      useCamera: 'any',
     },
     // Optional Id of the HTML audio/video tag to be used for playing video/audio.
     // This can even be a function which will return an element id. (Use this as

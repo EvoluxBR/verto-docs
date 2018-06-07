@@ -55,6 +55,8 @@ function makeCall() {
     incomingBandwidth: 'default',
     // Enable stereo audio.
     useStereo: true,
+    // Set to false to disable inbound video.
+    useVideo: true,
     // You can pass any application/call specific variables here, and they will
     // be available as a dialplan variable, prefixed with 'verto_dvar_'.
     userVariables: {
