@@ -7,8 +7,8 @@ disqus: 2018-06-19-adding-h264-support
 order: 17
 ---
 
-While the default configured video codec for video in Verto is VP8, H264 is
-also supported, and requires just a few small configuration changes.
+While the default configured video codec in Verto is VP8, H264 is also
+supported, and requires just a few small configuration changes.
 
 
 ## Build/load mod_av
